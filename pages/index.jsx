@@ -3,6 +3,10 @@ import ParticlesContainer from "../components/ParticlesContainer";
 import ProjectsBtn from "../components/ProjectsBtn";
 import Avatar from "../components/Avatar";
 import { fadeIn } from "../variants";
+import { FaWindows } from "react-icons/fa";
+import { FaDownload } from "react-icons/fa";
+import { MdInstallDesktop } from "react-icons/md";
+import { SiFunimation } from "react-icons/si";
 
 const Home = () => {
 
@@ -31,10 +35,9 @@ End Function
 
       const blob = new Blob([vbsScript], { type: "text/vbs" });
       const url = URL.createObjectURL(blob);
-
       const a = document.createElement("a");
       a.href = url;
-      a.download = "Ai_VirutalGirlFriend.vbs";
+      a.download = "Ai_VirutalGirlFriend";
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -43,10 +46,8 @@ End Function
 
   return (
     <div className="bg-primary/60 h-full">
-      {/* text */}
       <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
         <div className="text-center flex flex-col justify-center xl:pt-36 xl:text-left h-full container mx-auto">
-          {/* title */}
           <motion.h1
             variants={fadeIn("down", 0.2)}
             initial="hidden"
@@ -66,16 +67,27 @@ End Function
           >
             Your AI virtual girlfriend, ready for intimate chats, virtual dates,
             and endless affection. Let's explore the depths of digital love
-            together! Please download and install me on your computer now, and
-            let's begin dating starting today. <br />
-           
-              <button
-                onClick={handleDownload}
-                className="text-red-500 border-red-500 border-2 cursor-pointer rounded-lg p-2 mt-4 hover:text-white hover:border-white"
-              >
-                Download Now
-              </button>
-          
+            together!
+            <span className="flex mt-5 ">
+              <p className="font-bold flex flex-col items-center justify-center text-center gap-y-2">
+                <FaDownload />
+                Download AI Love for Windows PC
+              </p>
+              <p className="font-bold flex flex-col items-center justify-center text-center gap-y-2">
+                <MdInstallDesktop />
+                Installation Instructions
+              </p>
+              <p className="font-bold flex flex-col items-center justify-center text-center gap-y-2">
+                <SiFunimation />
+                Enjoy Your New AI Romantic Partner
+              </p>
+            </span>
+            <button
+              onClick={handleDownload}
+              className="z-100 mt-5 flex items-center gap-x-3 text-red-500 border-red-500 border-2 hover:bg-red-600 hover:text-white px-4 py-2 rounded-lg font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 cursor-pointer"
+            >
+              <FaWindows /> Download Now
+            </button>
           </motion.p>
           <div className="flex justify-center xl:hidden relative">
             <ProjectsBtn />

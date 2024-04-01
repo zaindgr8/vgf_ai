@@ -17,21 +17,15 @@ const Layout = ({ children }) => {
     <main
       className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative`}
     >
-      {/* metadata */}
+
       <Head>
         <title>Ai Love | Virtual Girlfriend Experience </title>
         <meta name="Ai Love" content="Virtual Girlfriend Experience" />
-        <meta name="Ai Love" content="Virtual Girlfriend Experience" />
-        <meta name="Ai Love" content="Ai Love: Virtual Ai Girlfriend" />
         <meta name="theme-color" content="#f13024" />
         <link rel="shortcut icon" href="/dp3.png" />
       </Head>
-
       <TopLeftImg />
-      {/* <Nav /> */}
-      <Header />
-
-      {/* main content */}
+      <Header className="" />
       {children}
     </main>
   );

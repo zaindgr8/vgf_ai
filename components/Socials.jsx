@@ -26,7 +26,7 @@ export const socialData = [
 
 const Socials = () => {
   return (
-    <div className="flex items-center gap-x-5 text-lg">
+    <div className="items-center gap-x-5 text-lg hidden lg:flex">
       {socialData.map((social, i) => (
         <Link
           key={i}
